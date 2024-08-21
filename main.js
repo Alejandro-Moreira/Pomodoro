@@ -8,14 +8,14 @@ let current = null; // Variable para almacenar la tarea actual en ejecución
 // Obtención de referencias a elementos del DOM
 const bAdd = document.querySelector('#bAdd'); // Botón para agregar tareas (aunque no se usa en el código proporcionado)
 const itTask = document.querySelector('#itTask'); // Campo de entrada para la nueva tarea
-const form = document.querySelector('#form'); // Formulario para agregar una tarea
+const form = document.querySelector('#idTask'); // Formulario para agregar una tarea
 
 // Manejo del evento de envío del formulario
 form.addEventListener('submit', e => {
     e.preventDefault(); // Evita el comportamiento predeterminado del formulario (recarga de la página)
 
     // Si el campo de entrada no está vacío, crea una nueva tarea y renderiza la lista de tareas
-    if (itTask.value != '') {
+    if (itTask.value !== '') {
         createTask(itTask.value); // Llama a la función para crear una nueva tarea con el valor del campo de entrada
         itTask.value = ''; // Limpia el campo de entrada
         renderTasks(); // Renderiza la lista actualizada de tareas
@@ -42,10 +42,10 @@ function renderTasks() {
         <div class="task">
             <div class="completed">
                 ${task.completed
-                ? `<span class="done">Done</span>` // Muestra 'Done' si la tarea está completada
-                : `<button class="start-button" data-id="${task.id}">Iniciar</button>`} // Muestra un botón 'Iniciar' si la tarea no está completada
+                ? `<span class="done">Done</span>`
+                : `<button class="start-button" data-id="${task.id}">Iniciar</button>`} 
             </div>
-            <div class="title">${task.title}</div> <!-- Muestra el título de la tarea -->
+            <div class="title">${task.title}</div> 
         </div>
         `;
     });
