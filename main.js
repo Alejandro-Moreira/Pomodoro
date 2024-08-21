@@ -47,7 +47,7 @@ function renderTasks() {
             <div class="completed">
                 ${task.completed
                 ? `<span class="done">Finalizada</span>` // Muestra "Finalizada" si la tarea está completada
-                : `<button class="start-button" data-id="${task.id}">Iniciar</button>`} // Muestra el botón de inicio si la tarea no está completada
+                : `<button class="start-button" data-id="${task.id}">Iniciar</button>`} 
             </div>
             <div class="title">${task.title}</div> 
         </div>
